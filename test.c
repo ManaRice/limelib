@@ -1,5 +1,4 @@
 #include "limelib.h"
-#include "include/whitespace.h"
 #include <stdio.h>
 #include <string.h>
 #include <assert.h>
@@ -92,20 +91,6 @@ void test_list()
     assert(optptr.has_value);
     struct test_struct result = *(struct test_struct*)optptr.value;
     printf("%s\n", result.s);
-}
-
-void test_bintoint()
-{
-    printf("\nTESTING BINTOINT (first bit is sign)...\n");
-    printf("-----------------------------------------\n\n\n");
-    printf("1 0101: %d\n", bintoint_nums("0101"));
-    printf("1 stst: %d\n", bintoint_whitespace(" \t \t"));
-    printf("2 1101: %d\n", bintoint_nums("1101"));
-    printf("2 ttst: %d\n", bintoint_whitespace("\t\t \t"));
-    printf("3 0110101: %d\n", bintoint_nums("0110101"));
-    printf("3 sttstst: %d\n", bintoint_whitespace(" \t\t \t \t"));
-    printf("4 0001101111: %c\n", bintoint_nums("0001101111"));
-    printf("4 sssttstttt: %c\n", bintoint_whitespace("   \t\t \t\t\t\t"));
 }
 
 void test_linkedlist()
