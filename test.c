@@ -84,17 +84,18 @@ void test_list()
     int c = list_append(generic_list, &s3);
     int d = list_append(generic_list, &s4);
 
-    printf("%d, %d, %d, %d", a, b, c, d);
+    printf("%d, %d, %d, %d\n", a, b, c, d);
 
     OptionalPtr optptr;
-    optptr = list_get(generic_list, 4);
-    assert(optptr.has_value);
+    optptr = list_get(generic_list, 3);
     struct test_struct result = *(struct test_struct*)optptr.value;
     printf("%s\n", result.s);
+    printf("TESTING DONE LIST\n");
 }
 
 void test_linkedlist()
 {
+
     printf("\nTESTING LINKEDLIST ...\n");
     printf("------------------------\n\n\n");
 
@@ -122,6 +123,8 @@ void test_linkedlist()
     int_linkedlist_print(list);
 
     int_linkedlist_destroy(list);
+
+    printf("TESTING DONE LINKEDLIST\n");
 }
 
 void test_hashmap()
@@ -174,11 +177,10 @@ void test_hashmap()
 
 int main()
 {
-    //test_stack();
-    //test_list();
-    //test_bintoint();
-    //test_linkedlist();
-
+    test_stack();
+    test_list();
+    test_linkedlist();
     test_hashmap();
+    printf("ALL TESTING DONE\n");
     return 0;
 }

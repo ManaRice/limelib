@@ -11,21 +11,21 @@ all: limelib.so test.c obj
 
 
 limelib.so: $(OBJ)stack.o $(OBJ)list.o $(OBJ)linkedlist.o $(OBJ)hashmap.o
-	$(CC) $(CFLAGS) -s -shared $^ -o $@
-	$(CC) $(CFLAGS) -s -shared $^ -o $(UTILS_PATH)$@
+	$(CC) $(CFLAGS) -fPIC -s -shared $^ -o $@
+	$(CC) $(CFLAGS) -fPIC -s -shared $^ -o $(UTILS_PATH)$@
 
 
 $(OBJ)stack.o: $(SRC)stack.c $(INC)stack.h
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -fPIC -c $< -o $@
 
 $(OBJ)list.o: $(SRC)list.c $(INC)list.h
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -fPIC -c $< -o $@
 
 $(OBJ)linkedlist.o: $(SRC)linkedlist.c $(INC)linkedlist.h
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -fPIC -c $< -o $@
 
 $(OBJ)hashmap.o: $(SRC)hashmap.c $(INC)hashmap.h
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -fPIC -c $< -o $@
 
 
 obj:

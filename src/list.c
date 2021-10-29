@@ -178,6 +178,8 @@ int list_append(List* list, void* element)
         //for (int i = 0; i < list->list_size; i++)
             //new_memory[i] = list->list_memory[i];
 
+        list->list_memory = new_memory;
+
         if (list->list_memory == NULL)
         {
             fprintf(stderr, "List expansion failed\n");
