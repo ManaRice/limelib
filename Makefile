@@ -6,7 +6,7 @@ INC=include/
 OBJ=obj/
 UTILS_PATH=../../utils/
 
-all: limelib.so test.c obj
+all: obj limelib.so test.c
 	$(CC) $(CFLAGS) -s test.c limelib.so -o test
 
 
